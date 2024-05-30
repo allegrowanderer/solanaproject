@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import '@solana/wallet-adapter-react-ui/styles.css';
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -30,4 +33,35 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+@keyframes progress-animation {
+  0% { background-position: 1px 0; }
+  100% { background-position: 0 0; }
+}
+
+.progress-bar {
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 1rem 1rem;
+  animation: progress-animation 1s linear infinite;
+  background-color: #B90000;
+}
+
+.progress-container {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
